@@ -1,11 +1,11 @@
 describe("template spec", () => {
-  it("passes", () => {
-    cy.visit("http://localhost:3000");
+  it("Contains correct header title text", () => {
+    cy.visit("/");
 
-    cy.get('[data-testid="cypress-title"]').should("exist")
-    .should('have.text', 'LangOasis');
+    cy.get('[data-test="welcome-title"]').should("exist")
+    .should('contain.text', 'LangOasis');
 
-    cy.get('[data-testid="cypress-subtitle"]').should("exist")
-    .should('have.text', 'Where you can discover and explore popular and obscure programming languages.')
+    cy.get('[data-test="welcome-description"]').should("exist")
+    .should('contain.text', 'Where you can discover and explore popular and obscure programming languages.')
   });
 });
